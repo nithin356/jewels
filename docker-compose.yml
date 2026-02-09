@@ -1,0 +1,13 @@
+services:
+  jewels:
+    build: .
+    container_name: jewels-app
+    ports:
+      - "3009:80"
+    networks:
+      - pangolin
+    restart: always
+
+networks:
+  pangolin:
+    external: true
