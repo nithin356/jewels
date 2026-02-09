@@ -109,16 +109,16 @@ const Navbar: React.FC = () => {
   };
 
   const navs = [
-    { 
-      label: 'Bulgari', 
+    {
+      label: 'Bulgari',
       href: '/shop?brand=Bulgari',
     },
-    { 
-      label: 'Cartier', 
+    {
+      label: 'Cartier',
       href: '/shop?brand=Cartier',
     },
-    { 
-      label: 'Messika', 
+    {
+      label: 'Messika',
       href: '/shop?brand=Messika',
       submenu: [
         { label: 'BRACELETS', href: '/shop?brand=Messika&collection=Move', image: '/messika/MOVE.jpg' },
@@ -127,8 +127,8 @@ const Navbar: React.FC = () => {
         { label: 'EARRINGS', href: '/shop?brand=Messika&collection=Joy', image: '/messika/JOY.jpg' },
       ]
     },
-    { 
-      label: 'Van Cleef', 
+    {
+      label: 'Van Cleef',
       href: '/shop?brand=Van+Cleef',
       submenu: [
         { label: 'BRACELETS', href: '/shop?brand=Van+Cleef&collection=Alhambra', image: '/vancleef/ALHAMBRA.png' },
@@ -137,8 +137,8 @@ const Navbar: React.FC = () => {
         { label: 'EARRINGS', href: '/shop?brand=Van+Cleef&collection=Socrate', image: '/vancleef/SOCRATE.jpg' },
       ]
     },
-    { 
-      label: 'Others', 
+    {
+      label: 'Others',
       href: '/shop?brand=Other',
       submenu: [
         { label: 'Boucheron - Quatre', href: '/shop?brand=Boucheron&collection=Quatre', image: 'https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=600&auto=format&fit=crop' },
@@ -169,7 +169,7 @@ const Navbar: React.FC = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex items-center justify-between">
             <div className="flex-1 text-center">
               <p className="text-xs text-stone-700 leading-relaxed">
-                <span className="font-semibold">QUALITY ASSURANCE:</span> All products <span className="font-bold text-[#C00000]">18 karat gold and diamond</span> • 
+                <span className="font-semibold">QUALITY ASSURANCE:</span> All products <span className="font-bold text-[#C00000]">18 karat gold and diamond</span> •
                 In Dubai: <span className="font-bold text-[#C00000]">COD available</span> - Check, examine, and purchase with confidence
               </p>
             </div>
@@ -191,14 +191,14 @@ const Navbar: React.FC = () => {
         {/* Row 2: Central Logo */}
         <div className="flex justify-center py-6 relative">
           <Link to="/" className="flex items-center relative">
-             <span className="text-4xl font-cinzel font-bold text-stone-900 tracking-wider">HAY.LUXURY</span>
-             {/* Animated Penguin */}
-             <img 
-               src="/dist/assets/penguin-joypixels-ezgif.com-webp-to-gif-converter.gif" 
-               alt="Penguin Mascot"
-               className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10"
-               style={{ animation: 'penguinTravelAcross 8s ease-in-out infinite' }}
-             />
+            <span className="text-4xl font-cinzel font-bold text-stone-900 tracking-wider">HAY.LUXURY</span>
+            {/* Animated Penguin */}
+            <img
+              src="/assets/penguin-joypixels-ezgif.com-webp-to-gif-converter.gif"
+              alt="Penguin Mascot"
+              className="absolute left-0 top-1/2 -translate-y-1/2 w-10 h-10"
+              style={{ animation: 'penguinTravelAcross 8s ease-in-out infinite' }}
+            />
           </Link>
         </div>
 
@@ -219,9 +219,9 @@ const Navbar: React.FC = () => {
                   >
                     {nav.label}
                     {/* Animated Red Underline */}
-                    <span 
+                    <span
                       className={`absolute bottom-0 left-0 h-[2px] bg-[#C00000] transition-all duration-300 ${brandMenuOpen === nav.label || nav.label === 'hover' ? 'w-full' : 'w-0'}`}
-                      style={{ 
+                      style={{
                         width: brandMenuOpen === nav.label ? '100%' : '0%',
                         transition: 'width 0.3s ease-in-out'
                       }}
@@ -231,31 +231,31 @@ const Navbar: React.FC = () => {
               ))}
             </div>
             <div className="absolute right-0 top-0 bottom-0 flex items-center">
-                {isSearchOpen ? (
-                   <form onSubmit={handleSearch} className="flex items-center border-b border-stone-300 pb-1">
-                       <input 
-                         type="text" 
-                         value={searchTerm}
-                         onChange={(e) => setSearchTerm(e.target.value)}
-                         placeholder="Search..."
-                         className="focus:outline-none text-xs w-32"
-                         autoFocus
-                       />
-                       <button type="button" onClick={() => setIsSearchOpen(false)} className="ml-2">
-                           <X className="h-3 w-3 text-stone-400" />
-                       </button>
-                   </form>
-                ) : (
-                    <button onClick={() => setIsSearchOpen(true)} className="text-stone-600 hover:text-stone-900">
-                        <Search className="h-4 w-4" />
-                    </button>
-                )}
+              {isSearchOpen ? (
+                <form onSubmit={handleSearch} className="flex items-center border-b border-stone-300 pb-1">
+                  <input
+                    type="text"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                    placeholder="Search..."
+                    className="focus:outline-none text-xs w-32"
+                    autoFocus
+                  />
+                  <button type="button" onClick={() => setIsSearchOpen(false)} className="ml-2">
+                    <X className="h-3 w-3 text-stone-400" />
+                  </button>
+                </form>
+              ) : (
+                <button onClick={() => setIsSearchOpen(true)} className="text-stone-600 hover:text-stone-900">
+                  <Search className="h-4 w-4" />
+                </button>
+              )}
             </div>
           </div>
-          
+
           {/* Dropdown Menu - Positioned relative to navigation container */}
           {brandMenuOpen && (navs.find(n => n.label === brandMenuOpen)?.submenu || MEGA_MENU_DATA[brandMenuOpen]) && (
-            <div 
+            <div
               className="fixed left-0 right-0 z-50 bg-white shadow-lg border-t border-stone-200"
               style={{ top: showDisclaimer ? '172px' : '128px' }}
               onMouseEnter={() => {
@@ -269,94 +269,93 @@ const Navbar: React.FC = () => {
               <div className="max-w-7xl mx-auto">
                 <div className="pt-8">
                   {/* Tabbed Navigation (Bvlgari / Cartier specific) */}
-                {MEGA_MENU_DATA[brandMenuOpen as string] ? (
-                  <>
-                    {/* Tabs Bar */}
-                    <div className="flex justify-center border-b border-stone-100 mb-10 overflow-x-auto no-scrollbar">
-                      <div className="flex space-x-10 px-4">
-                        {MEGA_MENU_DATA[brandMenuOpen as string].categories.map((cat) => (
-                          <button
-                            key={cat}
-                            onMouseEnter={() => setActiveSubMenuTab(cat)}
-                            className={`pb-4 text-[15px] font-medium tracking-[0.2em] uppercase transition-all relative ${
-                              activeSubMenuTab === cat ? 'text-black' : 'text-stone-400 hover:text-stone-600'
-                            }`}
-                            style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  {MEGA_MENU_DATA[brandMenuOpen as string] ? (
+                    <>
+                      {/* Tabs Bar */}
+                      <div className="flex justify-center border-b border-stone-100 mb-10 overflow-x-auto no-scrollbar">
+                        <div className="flex space-x-10 px-4">
+                          {MEGA_MENU_DATA[brandMenuOpen as string].categories.map((cat) => (
+                            <button
+                              key={cat}
+                              onMouseEnter={() => setActiveSubMenuTab(cat)}
+                              className={`pb-4 text-[15px] font-medium tracking-[0.2em] uppercase transition-all relative ${activeSubMenuTab === cat ? 'text-black' : 'text-stone-400 hover:text-stone-600'
+                                }`}
+                              style={{ fontFamily: 'Montserrat, sans-serif' }}
+                            >
+                              {cat}
+                              {activeSubMenuTab === cat && (
+                                <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#C00000]"></span>
+                              )}
+                            </button>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Collection Cards Reveal */}
+                      <div className="flex justify-center gap-6 overflow-x-auto pb-4 no-scrollbar">
+                        {(activeSubMenuTab === 'ALL COLLECTIONS'
+                          ? MEGA_MENU_DATA[brandMenuOpen as string].collections.slice(0, 6)
+                          : MEGA_MENU_DATA[brandMenuOpen as string].collections.filter(c => c.category === activeSubMenuTab)
+                        ).map((item, idx) => (
+                          <Link
+                            key={`${item.label}-${idx}`}
+                            to={item.href}
+                            onClick={() => setBrandMenuOpen(null)}
+                            className="group/item flex-shrink-0 w-[180px]"
                           >
-                            {cat}
-                            {activeSubMenuTab === cat && (
-                              <span className="absolute bottom-0 left-0 w-full h-[2px] bg-[#C00000]"></span>
-                            )}
-                          </button>
+                            <div className="aspect-square bg-stone-50 mb-4 overflow-hidden relative">
+                              <img
+                                src={item.image}
+                                alt={item.label}
+                                className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110"
+                              />
+                              <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/5 transition-colors duration-300"></div>
+                            </div>
+                            <h3 className="text-[15px] font-medium uppercase tracking-[0.2em] text-center text-black group-hover/item:text-stone-600 transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                              {item.label}
+                            </h3>
+                          </Link>
                         ))}
                       </div>
-                    </div>
 
-                    {/* Collection Cards Reveal */}
-                    <div className="flex justify-center gap-6 overflow-x-auto pb-4 no-scrollbar">
-                      {(activeSubMenuTab === 'ALL COLLECTIONS' 
-                        ? MEGA_MENU_DATA[brandMenuOpen as string].collections.slice(0, 6)
-                        : MEGA_MENU_DATA[brandMenuOpen as string].collections.filter(c => c.category === activeSubMenuTab)
-                      ).map((item, idx) => (
+                      <div className="text-center mt-12 pb-4">
                         <Link
-                          key={`${item.label}-${idx}`}
-                          to={item.href}
+                          to={navs.find(n => n.label === brandMenuOpen)?.href || '#'}
                           onClick={() => setBrandMenuOpen(null)}
-                          className="group/item flex-shrink-0 w-[180px]"
+                          className="text-[10px] font-medium uppercase tracking-[0.15em] text-stone-500 hover:text-black underline underline-offset-8 transition-colors"
                         >
-                          <div className="aspect-square bg-stone-50 mb-4 overflow-hidden relative">
-                            <img 
-                              src={item.image} 
-                              alt={item.label} 
-                              className="w-full h-full object-cover transition-transform duration-700 group-hover/item:scale-110" 
-                            />
-                            <div className="absolute inset-0 bg-black/0 group-hover/item:bg-black/5 transition-colors duration-300"></div>
-                          </div>
-                          <h3 className="text-[15px] font-medium uppercase tracking-[0.2em] text-center text-black group-hover/item:text-stone-600 transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                            {item.label}
-                          </h3>
+                          View all
                         </Link>
-                      ))}
-                    </div>
-
-                    <div className="text-center mt-12 pb-4">
-                      <Link
-                        to={navs.find(n => n.label === brandMenuOpen)?.href || '#'}
-                        onClick={() => setBrandMenuOpen(null)}
-                        className="text-[10px] font-medium uppercase tracking-[0.15em] text-stone-500 hover:text-black underline underline-offset-8 transition-colors"
-                      >
-                        View all
-                      </Link>
-                    </div>
-                  </>
-                ) : (
-                  /* Standard Submenu for other brands (Messika, Van Cleef) */
-                  <>
-                    <div className="flex gap-8 justify-center py-8">
-                      {navs.find(n => n.label === brandMenuOpen)?.submenu?.map((item) => (
-                        <Link
-                          key={item.label}
-                          to={item.href}
-                          onClick={() => setBrandMenuOpen(null)}
-                          className="group/item flex-shrink-0 w-[160px]"
-                        >
-                          <div className="aspect-square bg-stone-50 mb-4 overflow-hidden border border-stone-100">
-                            <div className="w-full h-full flex items-center justify-center bg-white group-hover/item:bg-stone-50 transition-all">
-                              {item.image ? (
-                                <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
-                              ) : (
-                                <span className="text-5xl text-stone-200">💎</span>
-                              )}
+                      </div>
+                    </>
+                  ) : (
+                    /* Standard Submenu for other brands (Messika, Van Cleef) */
+                    <>
+                      <div className="flex gap-8 justify-center py-8">
+                        {navs.find(n => n.label === brandMenuOpen)?.submenu?.map((item) => (
+                          <Link
+                            key={item.label}
+                            to={item.href}
+                            onClick={() => setBrandMenuOpen(null)}
+                            className="group/item flex-shrink-0 w-[160px]"
+                          >
+                            <div className="aspect-square bg-stone-50 mb-4 overflow-hidden border border-stone-100">
+                              <div className="w-full h-full flex items-center justify-center bg-white group-hover/item:bg-stone-50 transition-all">
+                                {item.image ? (
+                                  <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
+                                ) : (
+                                  <span className="text-5xl text-stone-200">💎</span>
+                                )}
+                              </div>
                             </div>
-                          </div>
-                          <h3 className="text-[15px] font-medium uppercase tracking-[0.2em] text-center text-black group-hover/item:text-stone-600 transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                            {item.label}
-                          </h3>
-                        </Link>
-                      ))}
-                    </div>
-                  </>
-                )}
+                            <h3 className="text-[15px] font-medium uppercase tracking-[0.2em] text-center text-black group-hover/item:text-stone-600 transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                              {item.label}
+                            </h3>
+                          </Link>
+                        ))}
+                      </div>
+                    </>
+                  )}
                 </div>
               </div>
             </div>
@@ -382,8 +381,8 @@ const Navbar: React.FC = () => {
             <Link to="/" className="relative inline-block">
               <span className="text-2xl font-cinzel font-bold text-stone-900">HAY.LUXURY</span>
               {/* Animated Penguin */}
-              <img 
-                src="/dist/assets/penguin-joypixels-ezgif.com-webp-to-gif-converter.gif" 
+              <img
+                src="/assets/penguin-joypixels-ezgif.com-webp-to-gif-converter.gif"
                 alt="Penguin Mascot"
                 className="absolute left-0 top-1/2 -translate-y-1/2 w-7 h-7"
                 style={{ animation: 'penguinTravelAcross 8s ease-in-out infinite' }}
@@ -392,28 +391,28 @@ const Navbar: React.FC = () => {
           </div>
 
           {/* Right: Search */}
-             <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="text-stone-800">
-              <Search className="h-5 w-5" />
-            </button>
+          <button onClick={() => setIsSearchOpen(!isSearchOpen)} className="text-stone-800">
+            <Search className="h-5 w-5" />
+          </button>
         </div>
-        
+
         {/* Mobile Search Bar (Expandable) */}
         {isSearchOpen && (
-            <div className="px-4 py-3 bg-stone-50 border-b border-stone-100">
-                <form onSubmit={handleSearch} className="relative">
-                    <input 
-                        type="text" 
-                        value={searchTerm}
-                        onChange={(e) => setSearchTerm(e.target.value)}
-                        placeholder="Search products..."
-                        className="w-full pl-3 pr-10 py-2 text-sm border border-stone-200 rounded-none focus:outline-none focus:border-stone-400"
-                        autoFocus
-                    />
-                    <button type="submit" className="absolute right-0 top-0 bottom-0 px-3 text-stone-500">
-                        <Search className="h-4 w-4" />
-                    </button>
-                </form>
-            </div>
+          <div className="px-4 py-3 bg-stone-50 border-b border-stone-100">
+            <form onSubmit={handleSearch} className="relative">
+              <input
+                type="text"
+                value={searchTerm}
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search products..."
+                className="w-full pl-3 pr-10 py-2 text-sm border border-stone-200 rounded-none focus:outline-none focus:border-stone-400"
+                autoFocus
+              />
+              <button type="submit" className="absolute right-0 top-0 bottom-0 px-3 text-stone-500">
+                <Search className="h-4 w-4" />
+              </button>
+            </form>
+          </div>
         )}
       </div>
 
@@ -422,117 +421,117 @@ const Navbar: React.FC = () => {
         <div className="md:hidden fixed inset-0 z-[100] bg-white flex flex-col animate-in slide-in-from-left duration-300">
           {/* Sidebar Header */}
           <div className="flex justify-between items-center p-5 border-b border-stone-100 bg-white min-h-[64px]">
-             {mobileBrandOpen ? (
-               <button onClick={() => {
-                 if (mobileCategoryOpen) {
-                   setMobileCategoryOpen(null);
-                 } else {
-                   setMobileBrandOpen(null);
-                 }
-               }} className="text-black hover:text-[#C00000] transition-colors flex items-center gap-2 text-[15px] font-medium tracking-[0.2em]">
-                 <ChevronLeft className="h-5 w-5" />
-                 {mobileCategoryOpen ? mobileCategoryOpen : 'BACK'}
-               </button>
-             ) : (
-               <button onClick={() => setIsOpen(false)} className="text-stone-800 hover:text-gold-600 transition-colors">
-                 <X className="h-6 w-6" />
-               </button>
-             )}
-             
-             {!mobileCategoryOpen && (
-               <span className="text-xl font-cinzel font-bold text-stone-900 tracking-wider absolute left-1/2 transform -translate-x-1/2">
-                 {mobileBrandOpen ? mobileBrandOpen.toUpperCase() : 'HAY.LUXURY'}
-               </span>
-             )}
-             <div className="w-10"></div>
+            {mobileBrandOpen ? (
+              <button onClick={() => {
+                if (mobileCategoryOpen) {
+                  setMobileCategoryOpen(null);
+                } else {
+                  setMobileBrandOpen(null);
+                }
+              }} className="text-black hover:text-[#C00000] transition-colors flex items-center gap-2 text-[15px] font-medium tracking-[0.2em]">
+                <ChevronLeft className="h-5 w-5" />
+                {mobileCategoryOpen ? mobileCategoryOpen : 'BACK'}
+              </button>
+            ) : (
+              <button onClick={() => setIsOpen(false)} className="text-stone-800 hover:text-gold-600 transition-colors">
+                <X className="h-6 w-6" />
+              </button>
+            )}
+
+            {!mobileCategoryOpen && (
+              <span className="text-xl font-cinzel font-bold text-stone-900 tracking-wider absolute left-1/2 transform -translate-x-1/2">
+                {mobileBrandOpen ? mobileBrandOpen.toUpperCase() : 'HAY.LUXURY'}
+              </span>
+            )}
+            <div className="w-10"></div>
           </div>
 
           {/* Scrollable Main Navigation */}
           <div className="flex-1 overflow-y-auto">
-              <div className="flex flex-col">
-                {!mobileBrandOpen ? (
-                  /* Level 1: Main Brand List */
-                  navs.map((nav) => (
-                    <button
-                      key={nav.label}
-                      onClick={() => {
-                        if (MEGA_MENU_DATA[nav.label] || nav.submenu) {
-                          setMobileBrandOpen(nav.label);
-                        } else {
-                          navigate(nav.href);
-                          setIsOpen(false);
-                        }
-                      }}
-                      className="flex justify-between items-center w-full px-6 py-5 border-b border-stone-50 text-[14px] font-medium tracking-[0.2em] uppercase text-black hover:bg-stone-50 transition-all group"
-                    >
-                      <span>{nav.label}</span>
-                      {(MEGA_MENU_DATA[nav.label] || nav.submenu) && <ChevronRight className="h-4 w-4 text-stone-300" />}
-                    </button>
-                  ))
-                ) : !mobileCategoryOpen ? (
-                  /* Level 2: Categories for selected Brand */
-                  <div className="p-4">
-                    {MEGA_MENU_DATA[mobileBrandOpen] ? (
-                      <div className="space-y-1">
-                        {MEGA_MENU_DATA[mobileBrandOpen].categories.map((cat) => (
-                          <button
-                            key={cat}
-                            onClick={() => setMobileCategoryOpen(cat)}
-                            className="flex justify-between items-center w-full px-4 py-4 text-[14px] font-medium tracking-[0.2em] uppercase text-black border-b border-stone-50"
-                          >
-                            <span>{cat}</span>
-                            <ChevronRight className="h-4 w-4 text-stone-300" />
-                          </button>
-                        ))}
-                      </div>
-                    ) : (
-                      /* Submenu fallback (Messika, Van Cleef) */
-                      <div className="grid grid-cols-2 gap-4 pt-4">
-                        {navs.find(n => n.label === mobileBrandOpen)?.submenu?.map((item) => (
-                           <Link
-                             key={item.label}
-                             to={item.href}
-                             onClick={() => setIsOpen(false)}
-                             className="flex flex-col items-center"
-                           >
-                              <div className="aspect-square w-full bg-stone-50 mb-3 overflow-hidden border border-stone-100 p-2">
-                                <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
-                              </div>
-                               <span className="text-[14px] font-medium uppercase tracking-[0.2em] text-center text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>{item.label}</span>
-                           </Link>
-                        ))}
-                      </div>
-                    )}
-                  </div>
-                ) : (
-                  /* Level 3: Grid of Collections */
-                  <div className="p-6">
-                    <div className="grid grid-cols-2 gap-x-4 gap-y-8">
-                      {MEGA_MENU_DATA[mobileBrandOpen]?.collections
-                        .filter(item => item.category === mobileCategoryOpen)
-                        .map((item, idx) => (
-                          <Link
-                            key={`${item.label}-${idx}`}
-                            to={item.href}
-                            onClick={() => { setIsOpen(false); setMobileBrandOpen(null); setMobileCategoryOpen(null); }}
-                            className="flex flex-col group"
-                          >
-                            <div className="aspect-square bg-stone-50 mb-4 overflow-hidden relative">
-                              <img 
-                                src={item.image} 
-                                alt={item.label} 
-                                className="w-full h-full object-cover" 
-                              />
-                            </div>
-                            <h3 className="text-[14px] font-medium uppercase tracking-[0.2em] text-center text-black leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                              {item.label}
-                            </h3>
-                          </Link>
-                        ))}
+            <div className="flex flex-col">
+              {!mobileBrandOpen ? (
+                /* Level 1: Main Brand List */
+                navs.map((nav) => (
+                  <button
+                    key={nav.label}
+                    onClick={() => {
+                      if (MEGA_MENU_DATA[nav.label] || nav.submenu) {
+                        setMobileBrandOpen(nav.label);
+                      } else {
+                        navigate(nav.href);
+                        setIsOpen(false);
+                      }
+                    }}
+                    className="flex justify-between items-center w-full px-6 py-5 border-b border-stone-50 text-[14px] font-medium tracking-[0.2em] uppercase text-black hover:bg-stone-50 transition-all group"
+                  >
+                    <span>{nav.label}</span>
+                    {(MEGA_MENU_DATA[nav.label] || nav.submenu) && <ChevronRight className="h-4 w-4 text-stone-300" />}
+                  </button>
+                ))
+              ) : !mobileCategoryOpen ? (
+                /* Level 2: Categories for selected Brand */
+                <div className="p-4">
+                  {MEGA_MENU_DATA[mobileBrandOpen] ? (
+                    <div className="space-y-1">
+                      {MEGA_MENU_DATA[mobileBrandOpen].categories.map((cat) => (
+                        <button
+                          key={cat}
+                          onClick={() => setMobileCategoryOpen(cat)}
+                          className="flex justify-between items-center w-full px-4 py-4 text-[14px] font-medium tracking-[0.2em] uppercase text-black border-b border-stone-50"
+                        >
+                          <span>{cat}</span>
+                          <ChevronRight className="h-4 w-4 text-stone-300" />
+                        </button>
+                      ))}
                     </div>
+                  ) : (
+                    /* Submenu fallback (Messika, Van Cleef) */
+                    <div className="grid grid-cols-2 gap-4 pt-4">
+                      {navs.find(n => n.label === mobileBrandOpen)?.submenu?.map((item) => (
+                        <Link
+                          key={item.label}
+                          to={item.href}
+                          onClick={() => setIsOpen(false)}
+                          className="flex flex-col items-center"
+                        >
+                          <div className="aspect-square w-full bg-stone-50 mb-3 overflow-hidden border border-stone-100 p-2">
+                            <img src={item.image} alt={item.label} className="w-full h-full object-cover" />
+                          </div>
+                          <span className="text-[14px] font-medium uppercase tracking-[0.2em] text-center text-black" style={{ fontFamily: 'Montserrat, sans-serif' }}>{item.label}</span>
+                        </Link>
+                      ))}
+                    </div>
+                  )}
+                </div>
+              ) : (
+                /* Level 3: Grid of Collections */
+                <div className="p-6">
+                  <div className="grid grid-cols-2 gap-x-4 gap-y-8">
+                    {MEGA_MENU_DATA[mobileBrandOpen]?.collections
+                      .filter(item => item.category === mobileCategoryOpen)
+                      .map((item, idx) => (
+                        <Link
+                          key={`${item.label}-${idx}`}
+                          to={item.href}
+                          onClick={() => { setIsOpen(false); setMobileBrandOpen(null); setMobileCategoryOpen(null); }}
+                          className="flex flex-col group"
+                        >
+                          <div className="aspect-square bg-stone-50 mb-4 overflow-hidden relative">
+                            <img
+                              src={item.image}
+                              alt={item.label}
+                              className="w-full h-full object-cover"
+                            />
+                          </div>
+                          <h3 className="text-[14px] font-medium uppercase tracking-[0.2em] text-center text-black leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                            {item.label}
+                          </h3>
+                        </Link>
+                      ))}
                   </div>
-                )}
-              </div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
       )}
