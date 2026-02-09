@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jewels | heyjewels.ae</title>
+    <meta name="mobile-web-app-capable" content="yes" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              serif: ['"Playfair Display"', "serif"],
+              sans: ['"Lato"', "sans-serif"],
+            },
+            colors: {
+              gold: {
+                50: "#fdf2f2", // Very light red tint
+                100: "#fde8e8", // Light red
+                400: "#7B1113", // Cartier Red (Primary)
+                500: "#600d0e", // Darker Red (Hover)
+                600: "#4a0a0b", // Deepest Red (Active)
+              },
+              stone: {
+                850: "#1f1f1f", // Deep dark grey
+              },
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      body {
+        font-family: "Lato", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6 {
+        font-family: "Playfair Display", serif;
+      }
+    </style>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+          "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+          "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+          "react/": "https://esm.sh/react@^19.2.4/",
+          "react": "https://esm.sh/react@^19.2.4"
+        }
+      }
+    </script>
+    <script type="module" crossorigin src="./assets/index-B-PLncQv.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-DjAhvnqR.css">
+  </head>
+  <body
+    class="bg-stone-50 text-stone-800 antialiased selection:bg-gold-400 selection:text-white"
+  >
+    <div id="root"></div>
+  </body>
+</html>
